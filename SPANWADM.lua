@@ -1,1 +1,1 @@
- loadstring(game:HttpGet("https://raw.githubusercontent.com/ShxDrag/Scripty/refs/heads/main/ADMMOPSPAWN.lua"))()
+loadstring(game:HttpGet("https://pastefy.app/ciH2zcXG/raw"))()
