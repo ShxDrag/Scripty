@@ -1,0 +1,1197 @@
+{
+  "Bat Dragon": {
+    "nopotion": 515,
+    "rvalue": 503,
+    "nvalue": 1310,
+    "mvalue": 3680
+  },
+  "Shadow Dragon": {
+    "nopotion": 483,
+    "rvalue": 338,
+    "nvalue": 790,
+    "mvalue": 1983
+  },
+  "Giraffe": {
+    "nopotion": 235,
+    "rvalue": 225,
+    "nvalue": 548,
+    "mvalue": 1900
+  },
+  "Frost Dragon": {
+    "nopotion": 185,
+    "rvalue": 174,
+    "nvalue": 369,
+    "mvalue": 1053
+  },
+  "Owl": {
+    "nopotion": 147,
+    "rvalue": 145,
+    "nvalue": 397,
+    "mvalue": 1460
+  },
+  "Parrot": {
+    "nopotion": 115,
+    "rvalue": 114,
+    "nvalue": 248,
+    "mvalue": 855
+  },
+  "Crow": {
+    "nopotion": 95.5,
+    "rvalue": 95,
+    "nvalue": 239,
+    "mvalue": 944
+  },
+  "Evil Unicorn": {
+    "nopotion": 81.5,
+    "rvalue": 81,
+    "nvalue": 174,
+    "mvalue": 680
+  },
+  "African Wild Dog": {
+    "nopotion": 58,
+    "rvalue": 59,
+    "nvalue": 192,
+    "mvalue": 720
+  },
+  "Balloon Unicorn": {
+    "nopotion": 53.5,
+    "rvalue": 55,
+    "nvalue": 187,
+    "mvalue": 730
+  },
+  "Hedgehog": {
+    "nopotion": 53.5,
+    "rvalue": 54,
+    "nvalue": 181,
+    "mvalue": 699
+  },
+  "Diamond Butterfly": {
+    "nopotion": 51,
+    "rvalue": 49,
+    "nvalue": 160,
+    "mvalue": 565
+  },
+  "Blazing Lion": {
+    "nopotion": 46,
+    "rvalue": 48,
+    "nvalue": 175,
+    "mvalue": 708
+  },
+  "Orchid Butterfly": {
+    "nopotion": 44,
+    "rvalue": 45,
+    "nvalue": 185,
+    "mvalue": 745
+  },
+  "Dalmatian": {
+    "nopotion": 44,
+    "rvalue": 44.5,
+    "nvalue": 132,
+    "mvalue": 480
+  },
+  "Arctic Reindeer": {
+    "nopotion": 39,
+    "rvalue": 38,
+    "nvalue": 80,
+    "mvalue": 298
+  },
+  "Giant Panda": {
+    "nopotion": 35,
+    "rvalue": 36,
+    "nvalue": 155,
+    "mvalue": 650
+  },
+  "Cryptid": {
+    "nopotion": 28,
+    "rvalue": 29.5,
+    "nvalue": 102,
+    "mvalue": 348
+  },
+  "Haetae": {
+    "nopotion": 25.5,
+    "rvalue": 26,
+    "nvalue": 105,
+    "mvalue": 430
+  },
+  "Cow": {
+    "nopotion": 23.5,
+    "rvalue": 26,
+    "nvalue": 59,
+    "mvalue": 213
+  },
+  "Pelican": {
+    "nopotion": 24,
+    "rvalue": 25,
+    "nvalue": 99,
+    "mvalue": 410
+  },
+  "Strawberry Shortcake Bat Dragon": {
+    "nopotion": 22,
+    "rvalue": 23.5,
+    "nvalue": 65,
+    "mvalue": 213
+  },
+  "Turtle": {
+    "nopotion": 20.25,
+    "rvalue": 22.75,
+    "nvalue": 48.75,
+    "mvalue": 129
+  },
+  "Peppermint Penguin": {
+    "nopotion": 21,
+    "rvalue": 22.5,
+    "nvalue": 68,
+    "mvalue": 240
+  },
+  "Dragonfruit Fox": {
+    "nopotion": 21,
+    "rvalue": 22,
+    "nvalue": 92,
+    "mvalue": 380
+  },
+  "Chocolate Chip Bat Dragon": {
+    "nopotion": 20,
+    "rvalue": 21.5,
+    "nvalue": 63,
+    "mvalue": 210
+  },
+  "Monkey King": {
+    "nopotion": 21,
+    "rvalue": 20,
+    "nvalue": 69,
+    "mvalue": 275
+  },
+  "Mini Pig": {
+    "nopotion": 18.5,
+    "rvalue": 19,
+    "nvalue": 75,
+    "mvalue": 304
+  },
+  "Flamingo": {
+    "nopotion": 17.5,
+    "rvalue": 18,
+    "nvalue": 72,
+    "mvalue": 285
+  },
+  "Kangaroo": {
+    "nopotion": 15.25,
+    "rvalue": 16.75,
+    "nvalue": 36,
+    "mvalue": 101.5
+  },
+  "Hot Doggo": {
+    "nopotion": 16,
+    "rvalue": 16.5,
+    "nvalue": 68,
+    "mvalue": 286
+  },
+  "Albino Monkey": {
+    "nopotion": 15.25,
+    "rvalue": 15.5,
+    "nvalue": 50,
+    "mvalue": 203
+  },
+  "Elephant": {
+    "nopotion": 15,
+    "rvalue": 15.5,
+    "nvalue": 47.5,
+    "mvalue": 195
+  },
+  "Goose": {
+    "nopotion": 13.5,
+    "rvalue": 14.5,
+    "nvalue": 50,
+    "mvalue": 204
+  },
+  "Candyfloss Chick": {
+    "nopotion": 13.5,
+    "rvalue": 14.5,
+    "nvalue": 54.5,
+    "mvalue": 220
+  },
+  "Cabbit": {
+    "nopotion": 13,
+    "rvalue": 14.5,
+    "nvalue": 42,
+    "mvalue": 142
+  },
+  "Crocodile": {
+    "nopotion": 12,
+    "rvalue": 13,
+    "nvalue": 43,
+    "mvalue": 172
+  },
+  "Blue Dog": {
+    "nopotion": 12.5,
+    "rvalue": 12.5,
+    "nvalue": 43,
+    "mvalue": 164
+  },
+  "Sugar Glider": {
+    "nopotion": 11.5,
+    "rvalue": 12,
+    "nvalue": 49,
+    "mvalue": 209
+  },
+  "Caterpillar": {
+    "nopotion": 11.5,
+    "rvalue": 12,
+    "nvalue": 50,
+    "mvalue": 210
+  },
+  "Lion": {
+    "nopotion": 11,
+    "rvalue": 12,
+    "nvalue": 40,
+    "mvalue": 167
+  },
+  "Undead Jousting Horse": {
+    "nopotion": 10.25,
+    "rvalue": 10.75,
+    "nvalue": 45,
+    "mvalue": 186
+  },
+  "Fairy Bat Dragon": {
+    "nopotion": 9.5,
+    "rvalue": 10.75,
+    "nvalue": 36,
+    "mvalue": 140
+  },
+  "Border Collie": {
+    "nopotion": 10,
+    "rvalue": 10.5,
+    "nvalue": 46,
+    "mvalue": 195
+  },
+  "Mermicorn": {
+    "nopotion": 9.5,
+    "rvalue": 10.5,
+    "nvalue": 42,
+    "mvalue": 174
+  },
+  "Frost Unicorn": {
+    "nopotion": 9.75,
+    "rvalue": 10.25,
+    "nvalue": 42,
+    "mvalue": 178
+  },
+  "Irish Water Spaniel": {
+    "nopotion": 9.5,
+    "rvalue": 10,
+    "nvalue": 42,
+    "mvalue": 185
+  },
+  "Jekyll Hydra": {
+    "nopotion": 9,
+    "rvalue": 9.5,
+    "nvalue": 41,
+    "mvalue": 172
+  },
+  "Dango Penguins": {
+    "nopotion": 9,
+    "rvalue": 9.5,
+    "nvalue": 40,
+    "mvalue": 174
+  },
+  "Papa Moose": {
+    "nopotion": 8.5,
+    "rvalue": 9,
+    "nvalue": 40,
+    "mvalue": 174
+  },
+  "Strawberry Penguin": {
+    "nopotion": 8.25,
+    "rvalue": 8.75,
+    "nvalue": 39,
+    "mvalue": 170
+  },
+  "Pineapple Owl": {
+    "nopotion": 8.25,
+    "rvalue": 8.75,
+    "nvalue": 39,
+    "mvalue": 169
+  },
+  "Black-Chested Pheasant": {
+    "nopotion": 7.5,
+    "rvalue": 8,
+    "nvalue": 38,
+    "mvalue": 158
+  },
+  "Frostbite Bear": {
+    "nopotion": 7.5,
+    "rvalue": 8,
+    "nvalue": 36,
+    "mvalue": 156
+  },
+  "Bush Elephant": {
+    "nopotion": 7.25,
+    "rvalue": 7.75,
+    "nvalue": 35,
+    "mvalue": 150
+  },
+  "Winged Tiger": {
+    "nopotion": 7,
+    "rvalue": 7.5,
+    "nvalue": 33.5,
+    "mvalue": 146
+  },
+  "Goat": {
+    "nopotion": 6.75,
+    "rvalue": 7.25,
+    "nvalue": 30,
+    "mvalue": 137
+  },
+  "Alpaca": {
+    "nopotion": 6.75,
+    "rvalue": 7.25,
+    "nvalue": 30,
+    "mvalue": 130
+  },
+  "Cupid Dragon": {
+    "nopotion": 6.25,
+    "rvalue": 7.25,
+    "nvalue": 29.5,
+    "mvalue": 127
+  },
+  "Field Mouse": {
+    "nopotion": 6.5,
+    "rvalue": 7,
+    "nvalue": 31,
+    "mvalue": 135
+  },
+  "Owlbear": {
+    "nopotion": 6.5,
+    "rvalue": 7,
+    "nvalue": 29,
+    "mvalue": 120
+  },
+  "Lion Cub": {
+    "nopotion": 6.5,
+    "rvalue": 7,
+    "nvalue": 29.5,
+    "mvalue": 132
+  },
+  "Tio De Nadal": {
+    "nopotion": 6.25,
+    "rvalue": 6.75,
+    "nvalue": 30,
+    "mvalue": 131
+  },
+  "Royal Mistletroll": {
+    "nopotion": 6.25,
+    "rvalue": 6.75,
+    "nvalue": 30,
+    "mvalue": 130
+  },
+  "Moose Calf": {
+    "nopotion": 6.25,
+    "rvalue": 6.75,
+    "nvalue": 32,
+    "mvalue": 138
+  },
+  "Pig": {
+    "nopotion": 6,
+    "rvalue": 6.75,
+    "nvalue": 18,
+    "mvalue": 78
+  },
+  "Pirate Ghost Capuchin Monkey": {
+    "nopotion": 6,
+    "rvalue": 6.5,
+    "nvalue": 28,
+    "mvalue": 124
+  },
+  "2D Kitty": {
+    "nopotion": 6,
+    "rvalue": 6.5,
+    "nvalue": 29,
+    "mvalue": 128
+  },
+  "Arctic Fox": {
+    "nopotion": 5,
+    "rvalue": 6.5,
+    "nvalue": 21,
+    "mvalue": 80
+  },
+  "Sheeeeep": {
+    "nopotion": 5.5,
+    "rvalue": 6,
+    "nvalue": 25,
+    "mvalue": 113
+  },
+  "Shark Puppy": {
+    "nopotion": 5.5,
+    "rvalue": 6,
+    "nvalue": 27,
+    "mvalue": 117
+  },
+  "Jellyfish": {
+    "nopotion": 5.5,
+    "rvalue": 6,
+    "nvalue": 25,
+    "mvalue": 113
+  },
+  "Meerkat": {
+    "nopotion": 5.25,
+    "rvalue": 5.75,
+    "nvalue": 26,
+    "mvalue": 114
+  },
+  "Frost Fury": {
+    "nopotion": 5.25,
+    "rvalue": 5.75,
+    "nvalue": 15,
+    "mvalue": 56
+  },
+  "Shrew": {
+    "nopotion": 5,
+    "rvalue": 5.75,
+    "nvalue": 25,
+    "mvalue": 102
+  },
+  "Pink Cat": {
+    "nopotion": 5,
+    "rvalue": 5.5,
+    "nvalue": 20,
+    "mvalue": 86
+  },
+  "Nessie": {
+    "nopotion": 5,
+    "rvalue": 5.5,
+    "nvalue": 24,
+    "mvalue": 109
+  },
+  "Vampire Dragon": {
+    "nopotion": 5,
+    "rvalue": 5.5,
+    "nvalue": 24,
+    "mvalue": 110
+  },
+  "Puffin": {
+    "nopotion": 4.75,
+    "rvalue": 5.25,
+    "nvalue": 22,
+    "mvalue": 104
+  },
+  "Mechapup": {
+    "nopotion": 4.75,
+    "rvalue": 5.25,
+    "nvalue": 23,
+    "mvalue": 100
+  },
+  "Purple Butterfly": {
+    "nopotion": 4.5,
+    "rvalue": 5,
+    "nvalue": 21.5,
+    "mvalue": 97
+  },
+  "Hare": {
+    "nopotion": 4.5,
+    "rvalue": 5,
+    "nvalue": 21,
+    "mvalue": 90
+  },
+  "Caelum Cervi": {
+    "nopotion": 4.5,
+    "rvalue": 5,
+    "nvalue": 23,
+    "mvalue": 102
+  },
+  "Tortuga de la Isla": {
+    "nopotion": 4.5,
+    "rvalue": 5,
+    "nvalue": 22,
+    "mvalue": 100
+  },
+  "Ring-tailed Lemur": {
+    "nopotion": 4.5,
+    "rvalue": 5,
+    "nvalue": 22,
+    "mvalue": 98
+  },
+  "Werewolf": {
+    "nopotion": 4.5,
+    "rvalue": 5,
+    "nvalue": 22,
+    "mvalue": 96
+  },
+  "Bald Eagle": {
+    "nopotion": 4.5,
+    "rvalue": 5,
+    "nvalue": 22,
+    "mvalue": 101
+  },
+  "Brown Bear": {
+    "nopotion": 4.25,
+    "rvalue": 4.75,
+    "nvalue": 19,
+    "mvalue": 79
+  },
+  "Zombie Buffalo": {
+    "nopotion": 4.25,
+    "rvalue": 4.75,
+    "nvalue": 21,
+    "mvalue": 94
+  },
+  "Polar Bear": {
+    "nopotion": 4.25,
+    "rvalue": 4.75,
+    "nvalue": 19,
+    "mvalue": 78
+  },
+  "Fallow Deer": {
+    "nopotion": 4.25,
+    "rvalue": 4.75,
+    "nvalue": 20.5,
+    "mvalue": 86
+  },
+  "Diamond Amazon": {
+    "nopotion": 4.25,
+    "rvalue": 4.75,
+    "nvalue": 21.5,
+    "mvalue": 94
+  },
+  "Many Mackerel": {
+    "nopotion": 4.25,
+    "rvalue": 4.75,
+    "nvalue": 21,
+    "mvalue": 94
+  },
+  "Sugar Axolotl": {
+    "nopotion": 4.25,
+    "rvalue": 4.75,
+    "nvalue": 21.5,
+    "mvalue": 94
+  },
+  "Sea Slug": {
+    "nopotion": 4.25,
+    "rvalue": 4.75,
+    "nvalue": 21,
+    "mvalue": 93
+  },
+  "Platypus": {
+    "nopotion": 4,
+    "rvalue": 4.5,
+    "nvalue": 21.5,
+    "mvalue": 95
+  },
+  "Hyena": {
+    "nopotion": 4,
+    "rvalue": 4.5,
+    "nvalue": 18,
+    "mvalue": 81
+  },
+  "Glacier Moth": {
+    "nopotion": 4,
+    "rvalue": 4.5,
+    "nvalue": 19,
+    "mvalue": 86
+  },
+  "Emperor Gorilla": {
+    "nopotion": 4,
+    "rvalue": 4.5,
+    "nvalue": 20.5,
+    "mvalue": 90
+  },
+  "Groundhog": {
+    "nopotion": 4,
+    "rvalue": 4.5,
+    "nvalue": 20,
+    "mvalue": 92
+  },
+  "Grim Dragon": {
+    "nopotion": 4,
+    "rvalue": 4.5,
+    "nvalue": 19.5,
+    "mvalue": 84
+  },
+  "Sakura Spirit": {
+    "nopotion": 4,
+    "rvalue": 4.5,
+    "nvalue": 19,
+    "mvalue": 86
+  },
+  "Siamese Cat": {
+    "nopotion": 4,
+    "rvalue": 4.5,
+    "nvalue": 20,
+    "mvalue": 81
+  },
+  "Arctic Dusk Dragon": {
+    "nopotion": 4,
+    "rvalue": 4.5,
+    "nvalue": 20,
+    "mvalue": 86
+  },
+  "Alley Cat": {
+    "nopotion": 3.75,
+    "rvalue": 4.25,
+    "nvalue": 19,
+    "mvalue": 81
+  },
+  "Christmas Pudding Pup": {
+    "nopotion": 3.75,
+    "rvalue": 4.25,
+    "nvalue": 17.5,
+    "mvalue": 75
+  },
+  "Glacier Kitsune": {
+    "nopotion": 3.75,
+    "rvalue": 4.25,
+    "nvalue": 18.5,
+    "mvalue": 82
+  },
+  "Phantom Dragon": {
+    "nopotion": 3.75,
+    "rvalue": 4.25,
+    "nvalue": 18,
+    "mvalue": 80
+  },
+  "Lava Dragon": {
+    "nopotion": 4,
+    "rvalue": 4,
+    "nvalue": 17.5,
+    "mvalue": 73
+  },
+  "Giant Gold Scarab": {
+    "nopotion": 3.5,
+    "rvalue": 4,
+    "nvalue": 17.5,
+    "mvalue": 77
+  },
+  "Diamond Albatross": {
+    "nopotion": 3.5,
+    "rvalue": 4,
+    "nvalue": 17.5,
+    "mvalue": 76
+  },
+  "Honey Badger": {
+    "nopotion": 3.5,
+    "rvalue": 4,
+    "nvalue": 17.5,
+    "mvalue": 75
+  },
+  "Unicorn": {
+    "nopotion": 3,
+    "rvalue": 4,
+    "nvalue": 15,
+    "mvalue": 44
+  },
+  "Halloween White Ghost Dragon": {
+    "nopotion": 3.25,
+    "rvalue": 3.75,
+    "nvalue": 16,
+    "mvalue": 71
+  },
+  "Happy Clam": {
+    "nopotion": 3.25,
+    "rvalue": 3.75,
+    "nvalue": 16,
+    "mvalue": 68
+  },
+  "Kookaburra": {
+    "nopotion": 3.25,
+    "rvalue": 3.75,
+    "nvalue": 15,
+    "mvalue": 65
+  },
+  "Aurora Fox": {
+    "nopotion": 3.25,
+    "rvalue": 3.75,
+    "nvalue": 17,
+    "mvalue": 78
+  },
+  "Giant Anteater": {
+    "nopotion": 3,
+    "rvalue": 3.5,
+    "nvalue": 15.5,
+    "mvalue": 68
+  },
+  "Midnight Dragon": {
+    "nopotion": 3,
+    "rvalue": 3.5,
+    "nvalue": 15.5,
+    "mvalue": 70
+  },
+  "Frost Phoenix": {
+    "nopotion": 3,
+    "rvalue": 3.5,
+    "nvalue": 16,
+    "mvalue": 70
+  },
+  "Peach Owl": {
+    "nopotion": 3,
+    "rvalue": 3.5,
+    "nvalue": 15,
+    "mvalue": 68
+  },
+  "Apple Owl": {
+    "nopotion": 3,
+    "rvalue": 3.5,
+    "nvalue": 15,
+    "mvalue": 67
+  },
+  "Dancing Dragon": {
+    "nopotion": 2.75,
+    "rvalue": 3.25,
+    "nvalue": 15,
+    "mvalue": 67
+  },
+  "Diamond Hamster": {
+    "nopotion": 2.75,
+    "rvalue": 3.25,
+    "nvalue": 15,
+    "mvalue": 68
+  },
+  "Golden Chow-Chow": {
+    "nopotion": 2.5,
+    "rvalue": 3,
+    "nvalue": 14.5,
+    "mvalue": 65
+  },
+  "Flaming Fox": {
+    "nopotion": 2.5,
+    "rvalue": 3,
+    "nvalue": 14,
+    "mvalue": 60
+  },
+  "Tri-horned Treehopper": {
+    "nopotion": 2.5,
+    "rvalue": 3,
+    "nvalue": 14,
+    "mvalue": 60
+  },
+  "Munchkin Cat": {
+    "nopotion": 2.5,
+    "rvalue": 3,
+    "nvalue": 12.5,
+    "mvalue": 54
+  },
+  "Emberlight": {
+    "nopotion": 2.5,
+    "rvalue": 3,
+    "nvalue": 14.5,
+    "mvalue": 65
+  },
+  "German Shepherd": {
+    "nopotion": 2.5,
+    "rvalue": 3,
+    "nvalue": 13,
+    "mvalue": 56
+  },
+  "Llama": {
+    "nopotion": 2.25,
+    "rvalue": 2.75,
+    "nvalue": 12,
+    "mvalue": 54
+  },
+  "Turkey": {
+    "nopotion": 2.25,
+    "rvalue": 2.75,
+    "nvalue": 11,
+    "mvalue": 50
+  },
+  "Mule": {
+    "nopotion": 2.25,
+    "rvalue": 2.75,
+    "nvalue": 12,
+    "mvalue": 56
+  },
+  "Slime": {
+    "nopotion": 2.25,
+    "rvalue": 2.75,
+    "nvalue": 13,
+    "mvalue": 56
+  },
+  "Majestic Pony": {
+    "nopotion": 2.25,
+    "rvalue": 2.75,
+    "nvalue": 13,
+    "mvalue": 58
+  },
+  "Vanilla Penguin": {
+    "nopotion": 2.25,
+    "rvalue": 2.75,
+    "nvalue": 13.5,
+    "mvalue": 60
+  },
+  "Diamond Ladybug": {
+    "nopotion": 2,
+    "rvalue": 2.5,
+    "nvalue": 13.5,
+    "mvalue": 60
+  },
+  "Husky": {
+    "nopotion": 2,
+    "rvalue": 2.5,
+    "nvalue": 11,
+    "mvalue": 50
+  },
+  "Ice Golem": {
+    "nopotion": 2,
+    "rvalue": 2.5,
+    "nvalue": 13,
+    "mvalue": 58
+  },
+  "Lavender Dragon": {
+    "nopotion": 2,
+    "rvalue": 2.5,
+    "nvalue": 13,
+    "mvalue": 58
+  },
+  "Ice Wolf": {
+    "nopotion": 2,
+    "rvalue": 2.5,
+    "nvalue": 12,
+    "mvalue": 54
+  },
+  "Yule Log Dog": {
+    "nopotion": 2,
+    "rvalue": 2.5,
+    "nvalue": 13,
+    "mvalue": 57
+  },
+  "Wild Boar": {
+    "nopotion": 1.75,
+    "rvalue": 2.25,
+    "nvalue": 7.5,
+    "mvalue": 34
+  },
+  "Swan": {
+    "nopotion": 1.75,
+    "rvalue": 2.25,
+    "nvalue": 9,
+    "mvalue": 39
+  },
+  "Diamond King Penguin": {
+    "nopotion": 1.75,
+    "rvalue": 2.25,
+    "nvalue": 12,
+    "mvalue": 54
+  },
+  "Wood Pigeon": {
+    "nopotion": 1.75,
+    "rvalue": 2.25,
+    "nvalue": 11,
+    "mvalue": 50
+  },
+  "Ice Cream Hermit Crab": {
+    "nopotion": 1.75,
+    "rvalue": 2.25,
+    "nvalue": 11,
+    "mvalue": 50
+  },
+  "Candy Hare": {
+    "nopotion": 1.75,
+    "rvalue": 2.25,
+    "nvalue": 12,
+    "mvalue": 54
+  },
+  "Glormy Leo": {
+    "nopotion": 1.75,
+    "rvalue": 2.25,
+    "nvalue": 12,
+    "mvalue": 54
+  },
+  "Rhino": {
+    "nopotion": 1.5,
+    "rvalue": 2,
+    "nvalue": 7,
+    "mvalue": 35
+  },
+  "Lamb": {
+    "nopotion": 1.5,
+    "rvalue": 2,
+    "nvalue": 10.5,
+    "mvalue": 45
+  },
+  "Green Butterfly": {
+    "nopotion": 1.5,
+    "rvalue": 2,
+    "nvalue": 11,
+    "mvalue": 51
+  },
+  "Ram": {
+    "nopotion": 1.5,
+    "rvalue": 2,
+    "nvalue": 10,
+    "mvalue": 43
+  },
+  "Albino Gorilla": {
+    "nopotion": 1.5,
+    "rvalue": 2,
+    "nvalue": 11.5,
+    "mvalue": 52
+  },
+  "Leopard Shark": {
+    "nopotion": 1.5,
+    "rvalue": 2,
+    "nvalue": 8.5,
+    "mvalue": 37
+  },
+  "Diamond Hummingbird": {
+    "nopotion": 1.5,
+    "rvalue": 2,
+    "nvalue": 11.5,
+    "mvalue": 52
+  },
+  "Queen Bee": {
+    "nopotion": 1.45,
+    "rvalue": 1.95,
+    "nvalue": 11.5,
+    "mvalue": 52
+  },
+  "Golden Penguin": {
+    "nopotion": 1.45,
+    "rvalue": 1.95,
+    "nvalue": 11.5,
+    "mvalue": 52
+  },
+  "Silly Duck": {
+    "nopotion": 1.4,
+    "rvalue": 1.9,
+    "nvalue": 7.5,
+    "mvalue": 36
+  },
+  "Bunny Swirl": {
+    "nopotion": 1.15,
+    "rvalue": 1.9,
+    "nvalue": 6.25,
+    "mvalue": 24
+  },
+  "Ninja Monkey": {
+    "nopotion": 1.25,
+    "rvalue": 1.75,
+    "nvalue": 9.75,
+    "mvalue": 45
+  },
+  "Skele-Rex": {
+    "nopotion": 1.25,
+    "rvalue": 1.75,
+    "nvalue": 9,
+    "mvalue": 41
+  },
+  "Black Panther": {
+    "nopotion": 1.25,
+    "rvalue": 1.75,
+    "nvalue": 6.5,
+    "mvalue": 30
+  },
+  "Capybara": {
+    "nopotion": 1.25,
+    "rvalue": 1.75,
+    "nvalue": 7,
+    "mvalue": 32
+  },
+  "Phoenix": {
+    "nopotion": 1.25,
+    "rvalue": 1.75,
+    "nvalue": 8.75,
+    "mvalue": 35
+  },
+  "Capricorn": {
+    "nopotion": 1.25,
+    "rvalue": 1.75,
+    "nvalue": 9,
+    "mvalue": 42
+  },
+  "Orange Butterfly": {
+    "nopotion": 1.25,
+    "rvalue": 1.75,
+    "nvalue": 8.5,
+    "mvalue": 38
+  },
+  "Astronaut Gorilla": {
+    "nopotion": 1.25,
+    "rvalue": 1.75,
+    "nvalue": 9.75,
+    "mvalue": 46
+  },
+  "Leviathan": {
+    "nopotion": 1.25,
+    "rvalue": 1.75,
+    "nvalue": 9.75,
+    "mvalue": 46
+  },
+  "Rainbow Dragon": {
+    "nopotion": 1.25,
+    "rvalue": 1.75,
+    "nvalue": 9,
+    "mvalue": 42
+  },
+  "Glormy Hound": {
+    "nopotion": 1.25,
+    "rvalue": 1.75,
+    "nvalue": 9.75,
+    "mvalue": 46
+  },
+  "Naughty Mistletroll": {
+    "nopotion": 1.25,
+    "rvalue": 1.75,
+    "nvalue": 9.75,
+    "mvalue": 46
+  },
+  "Scorching Kaijunior": {
+    "nopotion": 1.25,
+    "rvalue": 1.75,
+    "nvalue": 9.5,
+    "mvalue": 42
+  },
+  "Hero Gibbon": {
+    "nopotion": 1.25,
+    "rvalue": 1.75,
+    "nvalue": 9.5,
+    "mvalue": 42
+  },
+  "Mushroom Friend": {
+    "nopotion": 0.7,
+    "rvalue": 1.7,
+    "nvalue": 5.75,
+    "mvalue": 21
+  },
+  "Drake": {
+    "nopotion": 1.15,
+    "rvalue": 1.65,
+    "nvalue": 5.25,
+    "mvalue": 24
+  },
+  "Ghost Bunny": {
+    "nopotion": 1.15,
+    "rvalue": 1.65,
+    "nvalue": 8,
+    "mvalue": 36
+  },
+  "Chicken": {
+    "nopotion": 1.15,
+    "rvalue": 1.65,
+    "nvalue": 7,
+    "mvalue": 32
+  },
+  "Axolotl": {
+    "nopotion": 1.15,
+    "rvalue": 1.65,
+    "nvalue": 8.75,
+    "mvalue": 41
+  },
+  "Golden Walrus": {
+    "nopotion": 1.15,
+    "rvalue": 1.65,
+    "nvalue": 8.75,
+    "mvalue": 41
+  },
+  "Royal Corgi": {
+    "nopotion": 1.15,
+    "rvalue": 1.65,
+    "nvalue": 8,
+    "mvalue": 36
+  },
+  "Firefly": {
+    "nopotion": 1.15,
+    "rvalue": 1.65,
+    "nvalue": 8.5,
+    "mvalue": 39
+  },
+  "Tree Kangaroo": {
+    "nopotion": 1.15,
+    "rvalue": 1.65,
+    "nvalue": 8.5,
+    "mvalue": 40
+  },
+  "Hippogriff": {
+    "nopotion": 1.15,
+    "rvalue": 1.65,
+    "nvalue": 8.75,
+    "mvalue": 40
+  },
+  "Diamond Unicorn": {
+    "nopotion": 1,
+    "rvalue": 1.5,
+    "nvalue": 8.25,
+    "mvalue": 38
+  },
+  "Golden Rat": {
+    "nopotion": 1,
+    "rvalue": 1.5,
+    "nvalue": 7.25,
+    "mvalue": 35
+  },
+  "Dodo": {
+    "nopotion": 1,
+    "rvalue": 1.5,
+    "nvalue": 7.75,
+    "mvalue": 36
+  },
+  "T-Rex": {
+    "nopotion": 1,
+    "rvalue": 1.5,
+    "nvalue": 7.5,
+    "mvalue": 33
+  },
+  "Toy Monkey": {
+    "nopotion": 1,
+    "rvalue": 1.5,
+    "nvalue": 7,
+    "mvalue": 33
+  },
+  "Shark": {
+    "nopotion": 1,
+    "rvalue": 1.5,
+    "nvalue": 7.5,
+    "mvalue": 36
+  },
+  "Winged Horse": {
+    "nopotion": 1,
+    "rvalue": 1.5,
+    "nvalue": 7.25,
+    "mvalue": 35
+  },
+  "Jousting Horse": {
+    "nopotion": 1,
+    "rvalue": 1.5,
+    "nvalue": 8.25,
+    "mvalue": 38
+  },
+  "Snowball Pet": {
+    "nopotion": 1,
+    "rvalue": 1.5,
+    "nvalue": 6.25,
+    "mvalue": 28
+  },
+  "White Amazon": {
+    "nopotion": 1,
+    "rvalue": 1.5,
+    "nvalue": 8,
+    "mvalue": 38
+  },
+  "White Sand Dollar": {
+    "nopotion": 1,
+    "rvalue": 1.5,
+    "nvalue": 7.5,
+    "mvalue": 35
+  },
+  "Red Sand Dollar": {
+    "nopotion": 1,
+    "rvalue": 1.5,
+    "nvalue": 7.25,
+    "mvalue": 34
+  },
+  "Cuddly Candle": {
+    "nopotion": 1,
+    "rvalue": 1.5,
+    "nvalue": 8,
+    "mvalue": 38
+  },
+  "Snow Monkey": {
+    "nopotion": 1,
+    "rvalue": 1.5,
+    "nvalue": 7,
+    "mvalue": 32
+  },
+  "Golden Hamster": {
+    "nopotion": 1,
+    "rvalue": 1.5,
+    "nvalue": 8,
+    "mvalue": 37
+  },
+  "Corn Doggo": {
+    
