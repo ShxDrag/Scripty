@@ -1739,12 +1739,6 @@
     "nvalue": 4.75,
     "mvalue": 16
   },
-  "Fire Mare": {
-    "nopotion": 0.5,
-    "rvalue": 1,
-    "nvalue": 4.75,
-    "mvalue": 15
-  },
   "Dimension Drifter": {
     "nopotion": 0.5,
     "rvalue": 1,
@@ -2844,6 +2838,12 @@
     "mvalue": 5
   },
   "Therapy Dog": {
+    "nopotion": 0.13,
+    "rvalue": 0.63,
+    "nvalue": 1.5,
+    "mvalue": 7
+  },
+  "Fire Mare": {
     "nopotion": 0.13,
     "rvalue": 0.63,
     "nvalue": 1.5,
