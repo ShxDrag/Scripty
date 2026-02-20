@@ -1739,6 +1739,12 @@
     "nvalue": 4.75,
     "mvalue": 16
   },
+  "Fire Mare": {
+    "nopotion": 0.5,
+    "rvalue": 1,
+    "nvalue": 4.75,
+    "mvalue": 15
+  },
   "Dimension Drifter": {
     "nopotion": 0.5,
     "rvalue": 1,
