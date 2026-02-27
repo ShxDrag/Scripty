@@ -59,6 +59,30 @@
     "nvalue": 187,
     "mvalue": 730
   },
+   "Rainbow Rattle": {
+    "nopotion": 53.5,
+    "rvalue": 55,
+    "nvalue": 187,
+    "mvalue": 730
+  },
+   "Candy Cannon": {
+    "nopotion": 53.5,
+    "rvalue": 55,
+    "nvalue": 187,
+    "mvalue": 730
+  },
+   "Rainbow Maker": {
+    "nopotion": 53.5,
+    "rvalue": 55,
+    "nvalue": 187,
+    "mvalue": 730
+  },
+  "Tombstone Ghostify": {
+    "nopotion": 53.5,
+    "rvalue": 55,
+    "nvalue": 187,
+    "mvalue": 730
+  },
   "Hedgehog": {
     "nopotion": 53.5,
     "rvalue": 54,
@@ -150,6 +174,42 @@
     "mvalue": 380
   },
   "Chocolate Chip Bat Dragon": {
+    "nopotion": 20,
+    "rvalue": 21.5,
+    "nvalue": 63,
+    "mvalue": 210
+  },
+  "Jungle Egg": {
+    "nopotion": 20,
+    "rvalue": 21.5,
+    "nvalue": 63,
+    "mvalue": 210
+  },
+  "Farm Egg": {
+    "nopotion": 20,
+    "rvalue": 21.5,
+    "nvalue": 63,
+    "mvalue": 210
+  },
+  "Safari Egg": {
+    "nopotion": 20,
+    "rvalue": 21.5,
+    "nvalue": 63,
+    "mvalue": 210
+  },
+  "Blue Egg": {
+    "nopotion": 20,
+    "rvalue": 21.5,
+    "nvalue": 63,
+    "mvalue": 210
+  },
+  "Pink Egg": {
+    "nopotion": 20,
+    "rvalue": 21.5,
+    "nvalue": 63,
+    "mvalue": 210
+  },
+  "Neon Black Scooter": {
     "nopotion": 20,
     "rvalue": 21.5,
     "nvalue": 63,
