@@ -1277,6 +1277,18 @@
     "nvalue": 8,
     "mvalue": 36
   },
+   "Blue Whale": {
+    "nopotion": 1,
+    "rvalue": 1.5,
+    "nvalue": 8,
+    "mvalue": 36
+  },
+   "Sea Turtle": {
+    "nopotion": 1,
+    "rvalue": 1.5,
+    "nvalue": 8,
+    "mvalue": 36
+  },
   "Prismatic Butterfly": {
     "nopotion": 1,
     "rvalue": 1.5,
