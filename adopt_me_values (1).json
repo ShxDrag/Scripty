@@ -143,6 +143,12 @@
     "nvalue": 105,
     "mvalue": 430
   },
+   "Aussie Egg": {
+    "nopotion": 25.5,
+    "rvalue": 26,
+    "nvalue": 105,
+    "mvalue": 430
+  },
   "Cow": {
     "nopotion": 23.5,
     "rvalue": 26,
@@ -540,6 +546,12 @@
     "mvalue": 109
   },
   "Vampire Dragon": {
+    "nopotion": 5,
+    "rvalue": 5.5,
+    "nvalue": 24,
+    "mvalue": 110
+  },
+  "Christmas Egg": {
     "nopotion": 5,
     "rvalue": 5.5,
     "nvalue": 24,
