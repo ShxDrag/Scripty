@@ -143,7 +143,7 @@
     "nvalue": 105,
     "mvalue": 430
   },
-   "Aussie Egg": {
+   "Flying Broomstick": {
     "nopotion": 25.5,
     "rvalue": 26,
     "nvalue": 105,
@@ -486,6 +486,12 @@
     "mvalue": 128
   },
   "Arctic Fox": {
+    "nopotion": 5,
+    "rvalue": 6.5,
+    "nvalue": 21,
+    "mvalue": 80
+  },
+   "Aussie Egg": {
     "nopotion": 5,
     "rvalue": 6.5,
     "nvalue": 21,
