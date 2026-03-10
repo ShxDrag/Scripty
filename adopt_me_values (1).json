@@ -191,6 +191,12 @@
     "nvalue": 92,
     "mvalue": 380
   },
+  "Monkey King": {
+    "nopotion": 21,
+    "rvalue": 20,
+    "nvalue": 69,
+    "mvalue": 275
+  },
   "Chocolate Chip Bat Dragon": {
     "nopotion": 20,
     "rvalue": 21.5,
@@ -233,11 +239,113 @@
     "nvalue": 63,
     "mvalue": 210
   },
-  "Monkey King": {
-    "nopotion": 21,
-    "rvalue": 20,
-    "nvalue": 69,
-    "mvalue": 275
+   "Egg Stroller": {
+    "nopotion": 20,
+    "rvalue": 21.5,
+    "nvalue": 63,
+    "mvalue": 210
+  },
+   "Giraffe Backpack": {
+    "nopotion": 20,
+    "rvalue": 21.5,
+    "nvalue": 63,
+    "mvalue": 210
+  },
+   "Premium Monkey Box": {
+    "nopotion": 20,
+    "rvalue": 21.5,
+    "nvalue": 63,
+    "mvalue": 210
+  },
+   "Cherry-on-Top": {
+    "nopotion": 20,
+    "rvalue": 21.5,
+    "nvalue": 63,
+    "mvalue": 210
+  },
+  "Magic Girl Wings": {
+    "nopotion": 20,
+    "rvalue": 21.5,
+    "nvalue": 63,
+    "mvalue": 210
+  },
+  "Giraffe Hat": {
+    "nopotion": 20,
+    "rvalue": 21.5,
+    "nvalue": 63,
+    "mvalue": 210
+  },
+  "Ghost Vehicle": {
+    "nopotion": 20,
+    "rvalue": 21.5,
+    "nvalue": 63,
+    "mvalue": 210
+  },
+   "Cloud": {
+    "nopotion": 20,
+    "rvalue": 21.5,
+    "nvalue": 63,
+    "mvalue": 210
+  },
+  "Rocket Sled": {
+    "nopotion": 20,
+    "rvalue": 21.5,
+    "nvalue": 63,
+    "mvalue": 210
+  },
+   "Super Jetpack": {
+    "nopotion": 20,
+    "rvalue": 21.5,
+    "nvalue": 63,
+    "mvalue": 210
+  },
+  "Golden Gift": {
+    "nopotion": 20,
+    "rvalue": 21.5,
+    "nvalue": 63,
+    "mvalue": 210
+  },
+  "Halo": {
+    "nopotion": 20,
+    "rvalue": 21.5,
+    "nvalue": 63,
+    "mvalue": 210
+  },
+  "Dragonfly Fairy Wings": {
+    "nopotion": 20,
+    "rvalue": 21.5,
+    "nvalue": 63,
+    "mvalue": 210
+  },
+  "2022 Birthday Party Hat": {
+    "nopotion": 20,
+    "rvalue": 21.5,
+    "nvalue": 63,
+    "mvalue": 210
+  },
+  "2022 Birthday Cupcake Shoes": {
+    "nopotion": 20,
+    "rvalue": 21.5,
+    "nvalue": 63,
+    "mvalue": 210
+  },
+  "Unicorn Horn": {
+    "nopotion": 20,
+    "rvalue": 21.5,
+    "nvalue": 63,
+    "mvalue": 210
+  },
+  "Angel Wings": {
+    "nopotion": 20,
+    "rvalue": 21.5,
+    "nvalue": 63,
+    "mvalue": 210
+  },
+  "Chinese Lantern": {
+    "nopotion": 20,
+    "rvalue": 21.5,
+    "nvalue": 63,
+    "mvalue": 210
   },
   "Mini Pig": {
     "nopotion": 18.5,
