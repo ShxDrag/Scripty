@@ -1415,13 +1415,7 @@
     "nvalue": 8,
     "mvalue": 36
   },
-   "Blue Whale": {
-    "nopotion": 1,
-    "rvalue": 1.5,
-    "nvalue": 8,
-    "mvalue": 36
-  },
-   "Sea Turtle": {
+   "Mochi Meow": {
     "nopotion": 1,
     "rvalue": 1.5,
     "nvalue": 8,
@@ -1997,7 +1991,25 @@
     "nvalue": 4.5,
     "mvalue": 23
   },
+  "Blue Whale": {
+    "nopotion": 0.45,
+    "rvalue": 0.95,
+    "nvalue": 4.5,
+    "mvalue": 23
+  },
+  "Sea Turtle": {
+    "nopotion": 0.45,
+    "rvalue": 0.95,
+    "nvalue": 4.5,
+    "mvalue": 23
+  },
   "Great Pyrenees": {
+    "nopotion": 0.45,
+    "rvalue": 0.95,
+    "nvalue": 4.25,
+    "mvalue": 18
+  },
+  "Gumball Caterpillar": {
     "nopotion": 0.45,
     "rvalue": 0.95,
     "nvalue": 4.25,
