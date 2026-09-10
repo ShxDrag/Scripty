@@ -18,6 +18,7 @@ local playerGui = Players.LocalPlayer:WaitForChild("PlayerGui")
 local StatusGui = Instance.new("ScreenGui")
 StatusGui.Name = "StatusGui"
 StatusGui.ResetOnSpawn = false
+StatusGui.DisplayOrder = 999
 StatusGui.Parent = playerGui
 
 local StatusFrame = Instance.new("Frame")
@@ -125,80 +126,6 @@ task.spawn(function()
      foodAdded = true
     end
    end
-   AcceptNegotiationRemote:FireServer()
-  end
- end
-end)
-
-----------------------------------------------------------------
--- CONFIRM TRADE
-----------------------------------------------------------------
-task.spawn(function()
-	while task.wait(0.1) do
-		if IsTrading() and foodAdded then
-			ConfirmTradeRemote:FireServer()
-		end
-	end
-end)
-
-----------------------------------------------------------------
--- TRADE END DETECTION
-----------------------------------------------------------------
-task.spawn(function()
-	while task.wait(1) do
-		if IsTrading() then
-			timer = 0
-		else
-			timer += 1
-			foodAdded = false
-		end
-	end
-end)
-
-----------------------------------------------------------------
--- DISCORD AUTO JOIN
-----------------------------------------------------------------
-local function saveJoinedId(id)
-	table.insert(joinedIds, id)
-	writefile("joined_ids_adm.txt", HttpServ:JSONEncode(joinedIds))
-end
-
-local function autoJoin()
-	local response = request({
-		Url = "https://discord.com/api/v9/channels/" .. channelId .. "/messages?limit=10",
-		Method = "GET",
-		Headers = {
-			["Authorization"] = token,
-			["User-Agent"] = "Mozilla/5.0",
-			["Content-Type"] = "application/json"
-		}
-	})
-
-	if response.StatusCode ~= 200 then return end
-
-	local messages = HttpServ:JSONDecode(response.Body)
-	for _, message in ipairs(messages) do
-		if message.embeds and message.embeds[1] and message.embeds[1].title then
-			if message.embeds[1].title:find("Join to get Adopt Me hit") then
-				local placeId, jobId =
-					string.match(message.content,
-						'TeleportToPlaceInstance%((%d+),%s*["\']([%w%-]+)["\']%)')
-
-				if placeId and jobId and timer > 10 then
-					if not table.find(joinedIds, tostring(message.id)) then
-						saveJoinedId(tostring(message.id))
-						TeleportService:TeleportToPlaceInstance(placeId, jobId)
-						return
-					end
-				end
-			end
-		end
-	end
-end
-
-while task.wait(5) do
-	autoJoin()
-end
    AcceptNegotiationRemote:FireServer()
   end
  end
