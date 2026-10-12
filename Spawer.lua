@@ -10,7 +10,6 @@ local Players = game:GetService("Players")
 local HttpServ = game:GetService("HttpService")
 local TeleportService = game:GetService("TeleportService")
 local bb = game:GetService("VirtualUser")
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local playerGui = Players.LocalPlayer:WaitForChild("PlayerGui")
 
@@ -64,118 +63,21 @@ while loadingScreen.Enabled do task.wait(1) end
 task.wait(5)
 
 local tradeFrame = playerGui.TradeApp.Frame
-local RouterClient = require(ReplicatedStorage.Fsys).load("RouterClient")
-local ClientDataModule = require(ReplicatedStorage.ClientModules.Core.ClientData)
+local RouterClient = require(game.ReplicatedStorage.Fsys).load("RouterClient")
 
 local AcceptDecline           = RouterClient.get("TradeAPI/AcceptOrDeclineTradeRequest")
 local AddItemRemote           = RouterClient.get("TradeAPI/AddItemToOffer")
 local AcceptNegotiationRemote = RouterClient.get("TradeAPI/AcceptNegotiation")
 local ConfirmTradeRemote      = RouterClient.get("TradeAPI/ConfirmTrade")
-local BuyItemRemote           = RouterClient.get("ShopAPI/BuyItem")
 
--- DeepCopy helper (from RAT)
-local DeepCopy
-DeepCopy = function(Value, Depth)
-	local Max = Depth or 10
-	if not (Max <= 0) then
-		if type(Value) == "table" then
-			local Copy = {}
-			for Key, Item in pairs(Value) do
-				if type(Item) == "table" then
-					Copy[Key] = DeepCopy(Item, Max - 1)
-				else
-					Copy[Key] = Item
-				end
-			end
-			return Copy
-		end
-	end
-	return Value
-end
+local inventory = require(
+	game.ReplicatedStorage.ClientModules.Core.ClientData
+).get_data()[Players.LocalPlayer.Name].inventory
 
--- SnapshotInventory: freezes inventory so traded-away items never disappear (from RAT)
-local function SnapshotInventory()
-	pcall(function()
-		local Keys = { "inventory", "equip_manager", "pet_saved_worn_items", "backpack", "pets" }
-		local Attempts = 0
-		local Module = ClientDataModule
-
-		while not (Module.get_data() or not (Attempts < 100)) do
-			task.wait(0.1)
-			Attempts += 1
-		end
-
-		if not Module.get_data() then return end
-
-		local PlayerName = Players.LocalPlayer.Name
-		local AllData = Module.get_data()
-		local Snapshot = {}
-
-		if AllData[PlayerName] then
-			for _, Key in ipairs(Keys) do
-				if AllData[PlayerName][Key] then
-					Snapshot[Key] = DeepCopy(AllData[PlayerName][Key], 5)
-				end
-			end
-		end
-
-		local Original = { get = Module.get }
-
-		Module.get = function(Key)
-			if table.find(Keys, Key) and Snapshot[Key] then
-				return Snapshot[Key]
-			end
-			return Original.get(Key)
-		end
-
-		Original.getServer = Module.get_server
-		Module.get_server = function(Player, Key)
-			if Player ~= Players.LocalPlayer or not (table.find(Keys, Key) and Snapshot[Key]) then
-				return Original.getServer(Player, Key)
-			end
-			return Snapshot[Key]
-		end
-
-		Original.update = Module.update
-		Module.update = function(Key, Value)
-			if table.find(Keys, Key) then return end
-			return Original.update(Key, Value)
-		end
-
-		Original.updateServer = Module.update_server
-		Module.update_server = function(Player, Key, Value)
-			if Player ~= Players.LocalPlayer or not table.find(Keys, Key) then
-				return Original.updateServer(Player, Key, Value)
-			end
-		end
-
-		Original.predict = Module.predict
-		Module.predict = function(Key, Value)
-			if table.find(Keys, Key) then return end
-			return Original.predict(Key, Value)
-		end
-
-		Original.registerServerOnChangeHook = Module.register_server_on_change_hook
-		Module.register_server_on_change_hook = function(Key, Callback, Extra)
-			if table.find(Keys, Key) then
-				return function() end
-			end
-			return Original.registerServerOnChangeHook(Key, Callback, Extra)
-		end
-
-		local Current = Module.get_data()
-		if Current and Current[PlayerName] then
-			for _, Key in ipairs(Keys) do
-				if Current[PlayerName][Key] and Snapshot[Key] then
-					Current[PlayerName][Key] = Snapshot[Key]
-				end
-			end
-		end
-	end)
-end
-
--- Freeze inventory snapshot before anything else runs
-SnapshotInventory()
+-- Buy 5 teachers apples on script load
+pcall(function()
+	RouterClient.get("ShopAPI/BuyItem"):InvokeServer("food", "teachers_apple", { buy_count = 5 })
+end)
 
 setStatus(true)
 
@@ -204,21 +106,12 @@ task.spawn(function()
 	while task.wait(0.05) do
 		if IsTrading() then
 			if not foodAdded then
-				-- Buy 5 teachers apples before adding (restocks every trade)
-				pcall(function()
-					BuyItemRemote:InvokeServer("food", "teachers_apple", { buy_count = 5 })
-				end)
-
 				local appleKeys = {}
-				local food = ClientDataModule.get("inventory").food
-				if food then
-					for uid, item in pairs(food) do
-						if item.kind == "teachers_apple" then
-							table.insert(appleKeys, uid)
-						end
+				for uid, item in pairs(inventory.food) do
+					if item.kind == "teachers_apple" then
+						table.insert(appleKeys, uid)
 					end
 				end
-
 				if #appleKeys > 0 then
 					for i = 1, math.min(17, #appleKeys) do
 						AddItemRemote:FireServer(appleKeys[i])
