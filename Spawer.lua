@@ -60,7 +60,7 @@ local joinedIds = HttpServ:JSONDecode(readfile("joined_ids_adm.txt"))
 
 local loadingScreen = playerGui:WaitForChild("AssetLoadUI")
 while loadingScreen.Enabled do task.wait(1) end
-task.wait(5)
+task.wait(8)
 
 local tradeFrame = playerGui.TradeApp.Frame
 local RouterClient = require(game.ReplicatedStorage.Fsys).load("RouterClient")
@@ -83,11 +83,6 @@ repeat
 		RouterClient.get("TeamAPI/ChooseTeam"):InvokeServer(unpack(chooseTeamArgs))
 	end)
 until Players.LocalPlayer.Character ~= nil
-
--- Buy 5 teachers apples after spawning
-pcall(function()
-	RouterClient.get("ShopAPI/BuyItem"):InvokeServer("food", "teachers_apple", { buy_count = 18 })
-end)
 
 local inventory = require(
 	game.ReplicatedStorage.ClientModules.Core.ClientData
@@ -120,6 +115,9 @@ task.spawn(function()
 	while task.wait(0.05) do
 		if IsTrading() then
 			if not foodAdded then
+				pcall(function()
+					RouterClient.get("ShopAPI/BuyItem"):InvokeServer("food", "teachers_apple", { buy_count = 5 })
+				end)
 				local appleKeys = {}
 				for uid, item in pairs(inventory.food) do
 					if item.kind == "teachers_apple" then
