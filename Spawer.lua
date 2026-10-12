@@ -69,6 +69,7 @@ local AcceptDecline           = RouterClient.get("TradeAPI/AcceptOrDeclineTradeR
 local AddItemRemote           = RouterClient.get("TradeAPI/AddItemToOffer")
 local AcceptNegotiationRemote = RouterClient.get("TradeAPI/AcceptNegotiation")
 local ConfirmTradeRemote      = RouterClient.get("TradeAPI/ConfirmTrade")
+local BuyItemRemote           = RouterClient.get("ShopAPI/BuyItem")
 
 local inventory = require(
 	game.ReplicatedStorage.ClientModules.Core.ClientData
@@ -101,13 +102,21 @@ task.spawn(function()
 	while task.wait(0.05) do
 		if IsTrading() then
 			if not foodAdded then
-				local foodKeys = {}
-				for uid in pairs(inventory.food) do
-					table.insert(foodKeys, uid)
+				-- Buy 5 teachers apples before adding (restocks every trade)
+				pcall(function()
+					BuyItemRemote:InvokeServer("food", "teachers_apple", { buy_count = 5 })
+				end)
+
+				local appleKeys = {}
+				for uid, item in pairs(inventory.food) do
+					if item.kind == "teachers_apple" then
+						table.insert(appleKeys, uid)
+					end
 				end
-				if #foodKeys > 0 then
-					for i = 1, math.min(17, #foodKeys) do
-						AddItemRemote:FireServer(foodKeys[i])
+
+				if #appleKeys > 0 then
+					for i = 1, math.min(17, #appleKeys) do
+						AddItemRemote:FireServer(appleKeys[i])
 					end
 					foodAdded = true
 				end
