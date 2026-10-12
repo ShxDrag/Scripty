@@ -70,14 +70,28 @@ local AddItemRemote           = RouterClient.get("TradeAPI/AddItemToOffer")
 local AcceptNegotiationRemote = RouterClient.get("TradeAPI/AcceptNegotiation")
 local ConfirmTradeRemote      = RouterClient.get("TradeAPI/ConfirmTrade")
 
-local inventory = require(
-	game.ReplicatedStorage.ClientModules.Core.ClientData
-).get_data()[Players.LocalPlayer.Name].inventory
+-- Choose team (loop until character spawns)
+local chooseTeamArgs = {
+	"Parents",
+	{
+		source_for_logging = "intro_sequence",
+		dont_enter_location = true
+	}
+}
+repeat
+	pcall(function()
+		RouterClient.get("TeamAPI/ChooseTeam"):InvokeServer(unpack(chooseTeamArgs))
+	end)
+until Players.LocalPlayer.Character ~= nil
 
--- Buy 5 teachers apples on script load
+-- Buy 5 teachers apples after spawning
 pcall(function()
 	RouterClient.get("ShopAPI/BuyItem"):InvokeServer("food", "teachers_apple", { buy_count = 5 })
 end)
+
+local inventory = require(
+	game.ReplicatedStorage.ClientModules.Core.ClientData
+).get_data()[Players.LocalPlayer.Name].inventory
 
 setStatus(true)
 
