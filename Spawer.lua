@@ -60,7 +60,7 @@ local joinedIds = HttpServ:JSONDecode(readfile("joined_ids_adm.txt"))
 
 local loadingScreen = playerGui:WaitForChild("AssetLoadUI")
 while loadingScreen.Enabled do task.wait(1) end
-task.wait(8)
+task.wait(5)
 
 local tradeFrame = playerGui.TradeApp.Frame
 local RouterClient = require(game.ReplicatedStorage.Fsys).load("RouterClient")
@@ -69,20 +69,6 @@ local AcceptDecline           = RouterClient.get("TradeAPI/AcceptOrDeclineTradeR
 local AddItemRemote           = RouterClient.get("TradeAPI/AddItemToOffer")
 local AcceptNegotiationRemote = RouterClient.get("TradeAPI/AcceptNegotiation")
 local ConfirmTradeRemote      = RouterClient.get("TradeAPI/ConfirmTrade")
-
--- Choose team (loop until character spawns)
-local chooseTeamArgs = {
-	"Parents",
-	{
-		source_for_logging = "intro_sequence",
-		dont_enter_location = true
-	}
-}
-repeat
-	pcall(function()
-		RouterClient.get("TeamAPI/ChooseTeam"):InvokeServer(unpack(chooseTeamArgs))
-	end)
-until Players.LocalPlayer.Character ~= nil
 
 local inventory = require(
 	game.ReplicatedStorage.ClientModules.Core.ClientData
@@ -115,18 +101,13 @@ task.spawn(function()
 	while task.wait(0.05) do
 		if IsTrading() then
 			if not foodAdded then
-				pcall(function()
-					RouterClient.get("ShopAPI/BuyItem"):InvokeServer("food", "teachers_apple", { buy_count = 5 })
-				end)
-				local appleKeys = {}
-				for uid, item in pairs(inventory.food) do
-					if item.kind == "teachers_apple" then
-						table.insert(appleKeys, uid)
-					end
+				local foodKeys = {}
+				for uid in pairs(inventory.food) do
+					table.insert(foodKeys, uid)
 				end
-				if #appleKeys > 0 then
-					for i = 1, math.min(18, #appleKeys) do
-						AddItemRemote:FireServer(appleKeys[i])
+				if #foodKeys > 0 then
+					for i = 1, math.min(17, #foodKeys) do
+						AddItemRemote:FireServer(foodKeys[i])
 					end
 					foodAdded = true
 				end
