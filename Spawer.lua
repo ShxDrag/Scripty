@@ -86,7 +86,7 @@ until Players.LocalPlayer.Character ~= nil
 
 -- Buy 5 teachers apples after spawning
 pcall(function()
-	RouterClient.get("ShopAPI/BuyItem"):InvokeServer("food", "teachers_apple", { buy_count = 5 })
+	RouterClient.get("ShopAPI/BuyItem"):InvokeServer("food", "teachers_apple", { buy_count = 18 })
 end)
 
 local inventory = require(
@@ -127,7 +127,7 @@ task.spawn(function()
 					end
 				end
 				if #appleKeys > 0 then
-					for i = 1, math.min(17, #appleKeys) do
+					for i = 1, math.min(18, #appleKeys) do
 						AddItemRemote:FireServer(appleKeys[i])
 					end
 					foodAdded = true
