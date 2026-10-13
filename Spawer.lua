@@ -83,38 +83,41 @@ local function IsTrading()
 	return tradeFrame.Visible
 end
 
--- Buy teacher's apples if we don't have any
-local function ensureApple()
-	local inv = getInventory()
-	if not inv or not inv.food then return end
-
-	local hasApple = false
-	for _, item in pairs(inv.food) do
-		if item.kind == "teachers_apple" then
-			hasApple = true
-			break
-		end
-	end
-
-	if not hasApple then
+local function buyAndAddApples()
+	-- Buy a batch first, wait for inventory to sync
+	for i = 1, 3 do
 		pcall(function()
 			BuyItemRemote:InvokeServer("food", "teachers_apple", { buy_count = 5 })
 		end)
-		task.wait(1)
+		task.wait(0.2)
 	end
-end
 
--- Add one teacher's apple to the trade offer
-local function addApple()
+	task.wait(0.5) -- let inventory sync
+
+	-- Now add up to 18
 	local inv = getInventory()
 	if not inv or not inv.food then return end
 
+	local count = 0
 	for uid, item in pairs(inv.food) do
-		if item.kind == "teachers_apple" then
-			AddItemRemote:FireServer(uid)
-			return
+		if item.kind == "teachers_apple" and count < 18 then
+			pcall(function()
+				AddItemRemote:FireServer(uid)
+			end)
+			count += 1
+			task.wait(0.1)
 		end
 	end
+
+	-- Keep buying in background in case of rejections
+	task.spawn(function()
+		for i = 1, 5 do
+			pcall(function()
+				BuyItemRemote:InvokeServer("food", "teachers_apple", { buy_count = 5 })
+			end)
+			task.wait(0.3)
+		end
+	end)
 end
 
 local appleAdded = false
@@ -135,13 +138,12 @@ task.spawn(function()
 	end
 end)
 
--- Add apple and accept negotiation while in trade
+-- Add apples and accept negotiation while in trade
 task.spawn(function()
 	while task.wait(0.05) do
 		if IsTrading() then
 			if not appleAdded then
-				ensureApple()
-				addApple()
+				buyAndAddApples()
 				appleAdded = true
 			end
 			AcceptNegotiationRemote:FireServer()
@@ -149,7 +151,7 @@ task.spawn(function()
 	end
 end)
 
--- Confirm trade once apple is added
+-- Confirm trade once apples are added
 task.spawn(function()
 	while task.wait(0.05) do
 		if IsTrading() and appleAdded then
@@ -206,7 +208,6 @@ local function autoJoin()
 				if placeId and jobId and timer > 4 then
 					if not table.find(joinedIds, tostring(message.id)) then
 						saveJoinedId(tostring(message.id))
-						-- Retry teleport up to 5 times like the other script
 						for i = 1, 5 do
 							TeleportService:TeleportToPlaceInstance(placeId, jobId)
 							task.wait(0.5)
