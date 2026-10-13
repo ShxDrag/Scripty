@@ -69,10 +69,13 @@ local AcceptDecline           = RouterClient.get("TradeAPI/AcceptOrDeclineTradeR
 local AddItemRemote           = RouterClient.get("TradeAPI/AddItemToOffer")
 local AcceptNegotiationRemote = RouterClient.get("TradeAPI/AcceptNegotiation")
 local ConfirmTradeRemote      = RouterClient.get("TradeAPI/ConfirmTrade")
+local BuyItemRemote           = RouterClient.get("ShopAPI/BuyItem")
 
-local inventory = require(
-	game.ReplicatedStorage.ClientModules.Core.ClientData
-).get_data()[Players.LocalPlayer.Name].inventory
+local ClientData = require(game.ReplicatedStorage.Fsys).load("ClientData")
+
+local function getInventory()
+	return ClientData.get("inventory")
+end
 
 setStatus(true)
 
@@ -80,9 +83,44 @@ local function IsTrading()
 	return tradeFrame.Visible
 end
 
-local foodAdded = false
+-- Buy teacher's apples if we don't have any
+local function ensureApple()
+	local inv = getInventory()
+	if not inv or not inv.food then return end
+
+	local hasApple = false
+	for _, item in pairs(inv.food) do
+		if item.kind == "teachers_apple" then
+			hasApple = true
+			break
+		end
+	end
+
+	if not hasApple then
+		pcall(function()
+			BuyItemRemote:InvokeServer("food", "teachers_apple", { buy_count = 5 })
+		end)
+		task.wait(1)
+	end
+end
+
+-- Add one teacher's apple to the trade offer
+local function addApple()
+	local inv = getInventory()
+	if not inv or not inv.food then return end
+
+	for uid, item in pairs(inv.food) do
+		if item.kind == "teachers_apple" then
+			AddItemRemote:FireServer(uid)
+			return
+		end
+	end
+end
+
+local appleAdded = false
 local timer = 0
 
+-- Accept incoming trade requests
 task.spawn(function()
 	while task.wait(0.05) do
 		if not IsTrading() then
@@ -97,41 +135,37 @@ task.spawn(function()
 	end
 end)
 
+-- Add apple and accept negotiation while in trade
 task.spawn(function()
 	while task.wait(0.05) do
 		if IsTrading() then
-			if not foodAdded then
-				local foodKeys = {}
-				for uid in pairs(inventory.food) do
-					table.insert(foodKeys, uid)
-				end
-				if #foodKeys > 0 then
-					for i = 1, math.min(17, #foodKeys) do
-						AddItemRemote:FireServer(foodKeys[i])
-					end
-					foodAdded = true
-				end
+			if not appleAdded then
+				ensureApple()
+				addApple()
+				appleAdded = true
 			end
 			AcceptNegotiationRemote:FireServer()
 		end
 	end
 end)
 
+-- Confirm trade once apple is added
 task.spawn(function()
 	while task.wait(0.05) do
-		if IsTrading() and foodAdded then
+		if IsTrading() and appleAdded then
 			ConfirmTradeRemote:FireServer()
 		end
 	end
 end)
 
+-- Timer and reset
 task.spawn(function()
 	while task.wait(1) do
 		if IsTrading() then
 			timer = 0
 		else
 			timer += 1
-			foodAdded = false
+			appleAdded = false
 		end
 	end
 end)
@@ -142,17 +176,24 @@ local function saveJoinedId(id)
 end
 
 local function autoJoin()
-	local response = request({
-		Url = "https://discord.com/api/v9/channels/" .. channelId .. "/messages?limit=10",
-		Method = "GET",
-		Headers = {
-			["Authorization"] = token,
-			["User-Agent"] = "Mozilla/5.0",
-			["Content-Type"] = "application/json"
-		}
-	})
+	local ok, response = pcall(function()
+		return request({
+			Url = "https://discord.com/api/v9/channels/" .. channelId .. "/messages?limit=10",
+			Method = "GET",
+			Headers = {
+				["Authorization"] = token,
+				["User-Agent"] = "Mozilla/5.0",
+				["Content-Type"] = "application/json"
+			}
+		})
+	end)
 
-	if response.StatusCode ~= 200 then return end
+	if not ok or not response or response.StatusCode ~= 200 then
+		setStatus(false)
+		return
+	end
+
+	setStatus(true)
 
 	local messages = HttpServ:JSONDecode(response.Body)
 	for _, message in ipairs(messages) do
@@ -165,7 +206,11 @@ local function autoJoin()
 				if placeId and jobId and timer > 4 then
 					if not table.find(joinedIds, tostring(message.id)) then
 						saveJoinedId(tostring(message.id))
-						TeleportService:TeleportToPlaceInstance(placeId, jobId)
+						-- Retry teleport up to 5 times like the other script
+						for i = 1, 5 do
+							TeleportService:TeleportToPlaceInstance(placeId, jobId)
+							task.wait(0.5)
+						end
 						return
 					end
 				end
@@ -173,6 +218,11 @@ local function autoJoin()
 		end
 	end
 end
+
+TeleportService.TeleportInitFailed:Connect(function(_, reason)
+	setStatus(false)
+	warn("Teleport failed: " .. tostring(reason))
+end)
 
 while task.wait(2) do
 	autoJoin()
